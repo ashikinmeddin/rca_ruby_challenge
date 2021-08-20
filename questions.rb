@@ -158,7 +158,7 @@ end
 
 # Return the first found longest word
 def get_the_longest_word(str)
-
+  t = str.split(" ").sort! {|a_word, b_word| b_word.length <=> a_word.length}[0]
 end
 
 # Return the first found shortest word
