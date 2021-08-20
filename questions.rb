@@ -2,10 +2,8 @@ require 'date'
 
 # Return the next number of the given integer
 def next_number(num)
-  num.t
-  num.u
-  puts t
-  puts
+  t = num.next
+  u = num.next
 end
 
 # Minutes into seconds
@@ -14,6 +12,8 @@ end
 
 # Return first element in an array
 def get_first_element(arr)
+  t = arr.first
+  u = arr.first
 end
 
 # Return integer from string
@@ -47,14 +47,12 @@ end
 # keep only the elements that start with an a
 def select_elements_starting_with_c(arr)
   t = arr.select { |word| word.start_with?('c') }
-  puts t
 
 end
 
 # Remove instances of nil (but NOT false) from an array
 def remove_nils_from_array(arr)
   n = arr.reject { |item| item.nil? || item == '' }
-  puts n
 end
 
 # Remove instances of nil AND false from an array
@@ -65,7 +63,6 @@ end
 def reverse_every_element_in_array(arr)
   a = arr
   a.map(&:reverse!)
-  puts a
 end
 
 # Return each possible pairing outcome in an array
