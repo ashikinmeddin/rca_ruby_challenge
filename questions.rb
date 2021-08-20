@@ -53,6 +53,8 @@ end
 
 # Remove instances of nil (but NOT false) from an array
 def remove_nils_from_array(arr)
+  n = arr.reject { |item| item.nil? || item == '' }
+  puts n
 end
 
 # Remove instances of nil AND false from an array
@@ -61,6 +63,9 @@ end
 
 # Reverse every word in an array and return it
 def reverse_every_element_in_array(arr)
+  a = arr
+  a.map(&:reverse!)
+  puts a
 end
 
 # Return each possible pairing outcome in an array
