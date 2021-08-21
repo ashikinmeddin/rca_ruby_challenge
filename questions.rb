@@ -32,6 +32,11 @@ end
 
 # Return true if sum of two numbers is more than 100, else false
 def more_than_100(num1, num2)
+  if num1+num2 > 100
+    return true
+  else
+    return false
+  end
 end
 
 # Return the unique number in an array
@@ -40,7 +45,6 @@ end
 
 # Return the length of nested array
 def get_length(arr)
-
 end
 
 # keep only the elements that start with an a
@@ -111,18 +115,22 @@ end
 
 # Return sum of two largest numbers in array
 def sum_of_two_largest_numbers(arr)
+  arr.max(2).reduce(:+)
 end
 
 # Return sum of two smallest numbers in array
 def sum_of_two_smallest_numbers(arr)
+  arr.min(2).reduce(:+)
 end
 
 # Return sum of positive number
 def sum_of_positive(arr)
+  arr.select {|e| e>=0}.sum
 end
 
 # Return sum of negative number
 def sum_of_negative(arr)
+  arr.select {|e| e<=0}.sum
 end
 
 # Sum positive number, count negative number
@@ -147,10 +155,18 @@ end
 
 # Rock Paper Scissors
 def rock_paper_scissors(player_1, player_2)
+  if player_1 == player_2
+    return "It's a draw!"
+  elsif player_1 > player_2
+    return "Player 2 wins!"
+  else
+    return "Player 1 wins!"
+  end
 end
 
 # Get the final price after applying discount
 def price_after_discount(price, discount)
+  p = price - (price * discount / 100)
 end
 
 # Order above 100 to eligible for free shipping
@@ -191,6 +207,7 @@ end
 
 # Capitalize first letter of each word
 def capitalize_letter_of_each_word(str)
+  str.split.map(&:capitalize).join(' ')
 end
 
 # Reverse words which have even length
