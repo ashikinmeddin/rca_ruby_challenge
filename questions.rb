@@ -125,7 +125,6 @@ end
 # Return index of the first vowel
 def index_of_the_first_vowel(str)
 ['a','e','i','o','u'].map { |c| [ str.index(c)] }.first
-
 end
 
 # Return sum of two largest numbers in array
