@@ -50,11 +50,12 @@ end
 
 # Remove instances of nil (but NOT false) from an array
 def remove_nils_from_array(arr)
-  arr.reject { |item| item.nil? || item == '' }
+  arr.reject { |item| item.nil?}
 end
 
 # Remove instances of nil AND false from an array
 def remove_nils_and_false_from_array(arr)
+  arr.select(&:itself)
 end
 
 # Reverse every word in an array and return it
@@ -172,10 +173,12 @@ end
 
 # Filter array with strings and integers, return strings only
 def filter_out_integers(arr)
+  arr.select { |num| num.is_a? (String) }
 end
 
 # Filter array with strings and integers, return integers only
 def filter_out_strings(arr)
+  arr.select { |num| num.is_a? (Integer)}
 end
 
 # Get the next alphabet of every letter of a word
@@ -221,6 +224,9 @@ end
 # Capitalized first letter for each word
 # Return false if empty string or more than 30 characters
 def hashtag(str)
+  return false if str.strip.empty?
+  str = str.split(" ").map(&:capitalize).join.prepend("#")
+  str.length > 30 ? false : str
 end
 
 # Reformat date to be [MM, DD, YYYY]
