@@ -25,17 +25,11 @@ end
 # Return false if number is less than or equal to 0
 # Return 'undefined' if it is invalid
 def positive_number(num)
-  if num > 0
-    return "true"
-  elsif num <= 0
-    return "false"
-  else
-    return "undefined"
-  end
 end
 
 # Reverse a given string
 def reverse(str)
+
 end
 
 # Return true if sum of two numbers is more than 100, else false
@@ -49,10 +43,12 @@ end
 
 # Return the unique number in an array
 def unique_number(arr)
+  arr.uniq.find {|e| arr.count(e) == 1}
 end
 
 # Return the length of nested array
 def get_length(arr)
+  arr.flatten(2).count
 end
 
 # keep only the elements that start with an a
@@ -77,6 +73,9 @@ end
 
 # Return each possible pairing outcome in an array
 def every_possible_pairing_of_word(arr)
+  i1 = arr
+  i2 = []
+  i1.combination(2).to_a
 end
 
 # Turn an array of numbers into two arrays of numbers
@@ -95,6 +94,11 @@ end
 # Return false if age is equal and above 18, when on break time
 # Return false if age is below 18
 def serve_drink(age, onBreak)
+  if ((age >= 18) && (onBreak == false))
+    return true
+  else
+    return false
+  end
 end
 
 # Sum an array by the first (n) numbers
@@ -143,10 +147,14 @@ end
 
 # Sum positive number, count negative number
 def sum_positive_count_negative(arr)
+  positives, negatives = arr.partition(&:positive?)
+  [positives.inject(0,&:+), negatives.length]
 end
 
 # Count positive number, sum negative number
 def count_positive_sum_negative(arr)
+  positives, negatives = arr.partition(&:positive?)
+  [positives.length, negatives.inject(0,&:+)]
 end
 
 # Return file extention from files
@@ -179,6 +187,7 @@ end
 
 # Order above 100 to eligible for free shipping
 def check_for_eligible_of_free_shipping(order)
+  order.any? { |item| item >= 100 }
 end
 
 # Return the first found longest word
@@ -193,6 +202,8 @@ end
 
 # Check if a month in a particular year contains a Sunday 7th
 def has_sunday_with_date_7(month, year)
+  Date.new(year, month, 7).downto(0).find(&:sunday?)
+  return true
 end
 
 # Filter array with strings and integers, return strings only
@@ -207,10 +218,12 @@ end
 
 # Get the next alphabet of every letter of a word
 def the_next_alphabet(word)
+
 end
 
 # Count each alphabet 'X', 'Y', 'Z' from a given string
 def calculate_alphabet(str)
+  str.each_char.tally
 end
 
 # Capitalize first letter of each word
@@ -228,6 +241,7 @@ end
 
 # Return an array of index of small letter
 def index_of_small_letter(word)
+
 end
 
 # Word Spelling
@@ -242,6 +256,17 @@ end
 # Perform operation of 4 types, if divided by 0 then is undefined
 # Add, Subtract, Multiply, Divide
 def operation_of(a, b, op)
+  if(op == :+)
+    a+b
+  elsif (op == :-)
+    a-b
+  elsif (op == :*)
+    a*b
+  elsif (op == :%)
+    a/b
+  else
+    return 'undefined'
+  end
 end
 
 # Hashtag generator
@@ -256,4 +281,5 @@ end
 
 # Reformat date to be [MM, DD, YYYY]
 def date_reformatting(date)
+    Date.parse(date).strftime'[%m, %d, %Y]'
 end
