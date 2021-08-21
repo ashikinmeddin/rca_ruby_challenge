@@ -2,18 +2,18 @@ require 'date'
 
 # Return the next number of the given integer
 def next_number(num)
-  t = num.next
-  u = num.next
+  num.next
 end
 
 # Minutes into seconds
 def minutes_into_seconds(minutes)
+
+  minutes = ( total_seconds / 60) % 60
 end
 
 # Return first element in an array
 def get_first_element(arr)
-  t = arr.first
-  u = arr.first
+  arr.first
 end
 
 # Return integer from string
@@ -29,6 +29,7 @@ end
 
 # Reverse a given string
 def reverse(str)
+
 end
 
 # Return true if sum of two numbers is more than 100, else false
@@ -46,13 +47,12 @@ end
 
 # keep only the elements that start with an a
 def select_elements_starting_with_c(arr)
-  t = arr.select { |word| word.start_with?('c') }
-
+  arr.select { |word| word.start_with?('c') }
 end
 
 # Remove instances of nil (but NOT false) from an array
 def remove_nils_from_array(arr)
-  n = arr.reject { |item| item.nil? || item == '' }
+  arr.reject { |item| item.nil? || item == '' }
 end
 
 # Remove instances of nil AND false from an array
@@ -61,8 +61,7 @@ end
 
 # Reverse every word in an array and return it
 def reverse_every_element_in_array(arr)
-  a = arr
-  a.map(&:reverse!)
+  arr.map(&:reverse!)
 end
 
 # Return each possible pairing outcome in an array
@@ -73,6 +72,7 @@ end
 # First array in the array is all even numbers
 # Second array in the array is all odd numbers
 def separate_arr_into_even_and_odd_num(arr)
+  n = arr.select { |e| e.even? || e == odd_num }
 end
 
 # Sorting string by last alphabet/character
@@ -163,6 +163,7 @@ end
 
 # Return the first found shortest word
 def get_the_shortest_word(str)
+  t = str.split(" ").sort! {|a_word, b_word| a_word.length <=> b_word.length}[0]
 end
 
 # Check if a month in a particular year contains a Sunday 7th
@@ -207,6 +208,7 @@ end
 
 # Sum up only numbers in an array
 def sum_up_numbers(arr)
+  arr.select {|n| n.is_a? Integer}.reduce(0, :+)
 end
 
 # Perform operation of 4 types, if divided by 0 then is undefined
