@@ -72,7 +72,7 @@ end
 # First array in the array is all even numbers
 # Second array in the array is all odd numbers
 def separate_arr_into_even_and_odd_num(arr)
-  n = arr.select { |e| e.even? || e == odd_num }
+  arr.select { |e| e.even? || e == odd_num }
 end
 
 # Sorting string by last alphabet/character
@@ -158,12 +158,12 @@ end
 
 # Return the first found longest word
 def get_the_longest_word(str)
-  t = str.split(" ").sort! {|a_word, b_word| b_word.length <=> a_word.length}[0]
+  str.split(" ").sort! {|a_word, b_word| b_word.length <=> a_word.length}[0]
 end
 
 # Return the first found shortest word
 def get_the_shortest_word(str)
-  t = str.split(" ").sort! {|a_word, b_word| a_word.length <=> b_word.length}[0]
+  str.split(" ").sort! {|a_word, b_word| a_word.length <=> b_word.length}[0]
 end
 
 # Check if a month in a particular year contains a Sunday 7th
