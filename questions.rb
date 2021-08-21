@@ -18,12 +18,20 @@ end
 # Return integer from string
 # Return 0 if it is invalid
 def string_to_integer(str)
+  str.to_i
 end
 
 # Return true if number is more than 0
 # Return false if number is less than or equal to 0
 # Return 'undefined' if it is invalid
 def positive_number(num)
+  if num > 0
+    return "true"
+  elsif num <= 0
+    return "false"
+  else
+    return "undefined"
+  end
 end
 
 # Reverse a given string
