@@ -103,6 +103,7 @@ end
 
 # Sum an array by the first (n) numbers
 def sum_numbers(arr, n)
+
 end
 
 # String to binary, range from a-m will be 0, range from n-z will be 1
@@ -256,14 +257,14 @@ end
 # Perform operation of 4 types, if divided by 0 then is undefined
 # Add, Subtract, Multiply, Divide
 def operation_of(a, b, op)
-  if(op == :+)
-    a+b
-  elsif (op == :-)
-    a-b
-  elsif (op == :*)
-    a*b
-  elsif (op == :%)
-    a/b
+  if(op == "add")
+    return a+b
+  elsif (op == "subtraction")
+    return a-b
+  elsif (op == "multiply")
+    return a*b
+  elsif (op == "divide")
+    return a/b
   else
     return 'undefined'
   end
