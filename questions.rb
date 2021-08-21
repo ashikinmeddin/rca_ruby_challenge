@@ -7,8 +7,7 @@ end
 
 # Minutes into seconds
 def minutes_into_seconds(minutes)
-
-  minutes = ( total_seconds / 60) % 60
+  seconds = minutes * 60
 end
 
 # Return first element in an array
@@ -29,7 +28,6 @@ end
 
 # Reverse a given string
 def reverse(str)
-
 end
 
 # Return true if sum of two numbers is more than 100, else false
@@ -96,6 +94,8 @@ end
 
 # Find missing numbers range from 1 to 10 in an array
 def find_the_missing_numbers(arr)
+  missing_num = arr.flat_map {|e| [e-1, e+1]}.uniq
+  diff = (missing_num - arr).select {|e| e >= 1}
 end
 
 # Swap two digits and see if it is larger than the one swapped
