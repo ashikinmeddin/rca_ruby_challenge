@@ -242,7 +242,6 @@ end
 
 # Return an array of index of small letter
 def index_of_small_letter(word)
-
 end
 
 # Word Spelling
@@ -259,14 +258,16 @@ end
 def operation_of(a, b, op)
   if(op == "add")
     return a+b
-  elsif (op == "subtraction")
+  elsif (op == "subtract")
     return a-b
   elsif (op == "multiply")
     return a*b
   elsif (op == "divide")
-    return a/b
-  else
-    return 'undefined'
+    if (a,b = 0)
+      return "undefined"
+    else
+      return a/b
+    end
   end
 end
 
