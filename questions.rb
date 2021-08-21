@@ -25,11 +25,18 @@ end
 # Return false if number is less than or equal to 0
 # Return 'undefined' if it is invalid
 def positive_number(num)
+  if num > 0
+    return true
+  elsif num <= 0
+    return false
+  elsif num.class == String
+    return 'undefined'
+  end
 end
 
 # Reverse a given string
 def reverse(str)
-
+  return str.reverse()
 end
 
 # Return true if sum of two numbers is more than 100, else false
@@ -124,7 +131,7 @@ end
 
 # Return index of the first vowel
 def index_of_the_first_vowel(str)
-['a','e','i','o','u'].map { |c| [ str.index(c)] }.first
+  ['a','e','i','o','u'].map { |c| [ str.index(c)] }.first
 end
 
 # Return sum of two largest numbers in array
@@ -165,6 +172,13 @@ end
 
 # Validation Zip code format
 def validation_of_zip_code(code)
+  if !/\A\d+\z/.match(code)
+    return false
+  elsif code.length == 5
+    return true
+  else
+    return false
+  end
 end
 
 # Keeps only strings with repeating identical characters
@@ -240,6 +254,13 @@ end
 
 # Sorting an array with 'asc', 'dsc', 'none'
 def sorting_an_array(arr, order)
+  if order == 'asc'
+    return arr.sort
+  elsif order == 'dsc'
+    return arr.sort{|a,b| b <=> a}
+  else order == "none"
+    return arr
+  end
 end
 
 # Return an array of index of small letter
@@ -248,6 +269,7 @@ end
 
 # Word Spelling
 def word_spelling(word)
+
 end
 
 # Sum up only numbers in an array
@@ -265,7 +287,7 @@ def operation_of(a, b, op)
   elsif (op == "multiply")
     return a*b
   elsif (op == "divide")
-    if (a,b = 0)
+    if b == 0
       return "undefined"
     else
       return a/b
