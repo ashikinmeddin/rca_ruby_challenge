@@ -124,6 +124,8 @@ end
 
 # Return index of the first vowel
 def index_of_the_first_vowel(str)
+['a','e','i','o','u'].map { |c| [ str.index(c)] }.first
+
 end
 
 # Return sum of two largest numbers in array
@@ -234,6 +236,7 @@ end
 
 # Reverse words which have even length
 def reverse_even_words(str)
+  str.split.map { |s| s.length < 4 ? s : s.reverse }.join(' ')
 end
 
 # Sorting an array with 'asc', 'dsc', 'none'
